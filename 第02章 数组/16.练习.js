@@ -96,9 +96,22 @@ const WeeklyTemps = function () {
     for (let i = 0; i < 6; i++) {
         allDate.push(allMonthDate.slice(i * 7, (i + 1) * 7))
     }
-    console.log(allDate)
+    
+    this.averageWeek = function (week) {
+        let data = allDate[week - 1].reduce((p, i) => {
+            return p + i
+        }, 0)
+        let average = data / 7
+        console.log(`周平均数为:${ average }`)
+    }
 }
 const weeklyTemps = new WeeklyTemps()
+weeklyTemps.averageWeek(3)
+
 
 // 4．创建这样一个对象，它将字母存储在一个数组中，
 // 并且用一个方法可以将字母连在一起，显示成一个单词。
+
+const words = ['h', 'e', 'l', 'l', 'o']
+const word = words.join('')
+console.log(word)
